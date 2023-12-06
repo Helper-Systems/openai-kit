@@ -1,15 +1,19 @@
 import Foundation
 
+public protocol ModelID {
+    var id: String { get }
+}
+
 /**
  List and describe the various models available in the API.
  */
-public struct Model: Codable {
+public struct Model: Codable, ModelID {
     public let id: String
     public let object: String
     public let created: Date
     public let ownedBy: String
-    public let permission: [Permission]
-    public let root: String
+    public let permission: [Permission]?
+    public let root: String?
     public let parent: String?
 }
 
@@ -28,10 +32,6 @@ extension Model {
         public let group: String?
         public let isBlocking: Bool
     }
-}
-
-public protocol ModelID {
-    var id: String { get }
 }
 
 extension Model {
