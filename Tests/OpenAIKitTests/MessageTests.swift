@@ -148,6 +148,6 @@ final class MessageTests: XCTestCase {
             user: nil
         )
         
-        print(request.body)
+        print(request.body as Any)
     }
 }

@@ -27,7 +27,7 @@ public struct AudioProvider {
         file: Data,
         fileName: String,
         mimeType: MIMEType.Audio,
-        model: ModelID = Model.Whisper.whisper1,
+        model: String = Model.Whisper.whisper1.rawValue,
         prompt: String? = nil,
         responseFormat: String? = nil,
         temperature: Double? = nil,
@@ -60,7 +60,7 @@ public struct AudioProvider {
         file: Data,
         fileName: String,
         mimeType: MIMEType.Audio,
-        model: ModelID = Model.Whisper.whisper1,
+        model: String = Model.Whisper.whisper1.rawValue,
         prompt: String? = nil,
         responseFormat: String? = nil,
         temperature: Double? = nil

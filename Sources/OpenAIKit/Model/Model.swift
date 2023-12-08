@@ -1,13 +1,9 @@
 import Foundation
 
-public protocol ModelID {
-    var id: String { get }
-}
-
 /**
  List and describe the various models available in the API.
  */
-public struct Model: Codable, ModelID {
+public struct Model: Codable {
     public let id: String
     public let object: String
     public let created: Date
@@ -35,14 +31,14 @@ extension Model {
 }
 
 extension Model {
-    public enum GPT4: String, ModelID {
+    public enum GPT4: String {
         case gpt4 = "gpt-4"
         case gpt40314 = "gpt-4-0314"
         case gpt4_32k = "gpt-4-32k"
         case gpt4_32k0314 = "gpt-4-32k-0314"
     }
 
-    public enum GPT3: String, ModelID {
+    public enum GPT3: String {
         case gpt3_5Turbo = "gpt-3.5-turbo"
         case gpt3_5Turbo16K = "gpt-3.5-turbo-16k"
         case gpt3_5Turbo0301 = "gpt-3.5-turbo-0301"
@@ -62,14 +58,14 @@ extension Model {
         case babbage
     }
 
-    public enum Codex: String, ModelID {
+    public enum Codex: String {
         case codeDavinci002 = "code-davinci-002"
         case codeCushman001 = "code-cushman-001"
         case codeDavinci001 = "code-davinci-001"
         case codeDavinciEdit001 = "code-davinci-edit-001"
     }
 
-    public enum Whisper: String, ModelID {
+    public enum Whisper: String {
         case whisper1 = "whisper-1"
     }
 }

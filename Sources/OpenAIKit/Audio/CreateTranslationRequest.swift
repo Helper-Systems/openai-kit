@@ -25,7 +25,7 @@ struct CreateTranslationRequest: Request {
         file: Data,
         fileName: String,
         mimeType: MIMEType.Audio,
-        model: ModelID,
+        model: String,
         prompt: String?,
         responseFormat: String?,
         temperature: Double?
@@ -39,7 +39,7 @@ struct CreateTranslationRequest: Request {
             mimeType: mimeType.rawValue
         )
         
-        builder.addTextField(named: "model", value: model.id)
+        builder.addTextField(named: "model", value: model)
         
         if let prompt = prompt {
             builder.addTextField(named: "prompt", value: prompt)

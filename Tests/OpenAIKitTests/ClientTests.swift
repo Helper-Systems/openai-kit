@@ -52,7 +52,7 @@ final class ClientTests: XCTestCase {
         ]
         
         let completion = try await client.chats.create(
-            model: Model.GPT4.gpt4,
+            model: Model.GPT4.gpt4.rawValue,
             messages: messages
         )
         
@@ -61,7 +61,7 @@ final class ClientTests: XCTestCase {
     
     func test_createCompletion() async throws {
         let completion = try await client.completions.create(
-            model: Model.GPT3.davinci,
+            model: Model.GPT3.davinci.rawValue,
             prompts: ["Write a haiku"]
         )
         
@@ -70,7 +70,7 @@ final class ClientTests: XCTestCase {
     
     func test_createChat() async throws {
         let completion = try await client.chats.create(
-            model: Model.GPT3.gpt3_5Turbo,
+            model: Model.GPT3.gpt3_5Turbo.rawValue,
             messages: [
                 .user(content: "Write a haiki")
             ]
@@ -81,7 +81,7 @@ final class ClientTests: XCTestCase {
     
     func test_createChatStream() async throws {
         let stream = try await client.chats.stream(
-            model: Model.GPT3.gpt3_5Turbo,
+            model: Model.GPT3.gpt3_5Turbo.rawValue,
             messages: [
                 .user(content: "Write a haiki")
             ]
